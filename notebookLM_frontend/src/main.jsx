@@ -4,6 +4,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import App from './routes/App.jsx';
 import './index.css';
+import { initAuthListener } from './store/auth';
+
+initAuthListener(); // <-- keep store in sync with Supabase
 
 const client = new QueryClient();
 
