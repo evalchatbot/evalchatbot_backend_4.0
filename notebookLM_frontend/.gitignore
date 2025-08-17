@@ -42,8 +42,3 @@ package-lock.json
 .tmp/
 coverage/
 *.tgz
-
-# Ignore empty folders in src/components, src/lib, src/features/sources
-src/components/
-src/lib/
-src/features/sources/
