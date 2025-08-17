@@ -166,19 +166,7 @@ export default function SignUp() {
               </div>
             )}
 
-            {/* Resend Confirmation */}
-            <div className="flex items-center justify-between pt-4 border-t border-white/10">
-              <button
-                type="button"
-                onClick={onResend}
-                className="text-sm text-gray-400 hover:text-teal-400 transition-colors duration-200 underline underline-offset-2"
-              >
-                Resend confirmation
-              </button>
-              {resent && (
-                <span className="text-xs text-green-400 bg-green-500/10 px-2 py-1 rounded-full">Sent (check spam)</span>
-              )}
-            </div>
+            
           </form>
 
           {/* Login Link */}

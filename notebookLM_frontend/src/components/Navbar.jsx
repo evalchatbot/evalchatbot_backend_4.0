@@ -72,9 +72,6 @@ export default function Navbar() {
                 <div className="w-8 h-8 rounded-full bg-gradient-to-r from-teal-500 to-teal-600 flex items-center justify-center text-xs font-semibold text-white shadow-lg">
                   {initialsFrom(user)}
                 </div>
-                <span className="text-sm text-gray-300 hidden sm:inline">
-                  {user?.user_metadata?.full_name || user?.email}
-                </span>
               </div>
               <button
                 onClick={onLogout}
