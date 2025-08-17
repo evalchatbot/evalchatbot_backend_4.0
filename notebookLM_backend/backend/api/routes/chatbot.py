@@ -1,17 +1,13 @@
-"""
-API routes for the Chatbot agent (RAG, memory management).
-"""
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from typing import Any, Dict, List
 from backend.agents.chatbot_agent import ChatbotAgent
+from backend.api.auth import get_current_user, AuthUser
 
 router = APIRouter(prefix="/chatbot", tags=["chatbot"])
-
 agent = ChatbotAgent()
 
 class ChatbotAskRequest(BaseModel):
-    user_id: str
     session_id: str
     question: str
     genre: str
@@ -23,11 +19,10 @@ class ChatbotAskResponse(BaseModel):
     metadata: Dict[str, Any]
 
 @router.post("/ask", response_model=ChatbotAskResponse)
-async def ask_chatbot(req: ChatbotAskRequest) -> ChatbotAskResponse:
-    """Ask a question to the chatbot agent (RAG, memory, vector search, async)."""
+async def ask_chatbot(req: ChatbotAskRequest, current: AuthUser = Depends(get_current_user)) -> ChatbotAskResponse:
     try:
         result = await agent.ask(
-            user_id=req.user_id,
+            user_id=current.user_id,
             session_id=req.session_id,
             question=req.question,
             genre=req.genre

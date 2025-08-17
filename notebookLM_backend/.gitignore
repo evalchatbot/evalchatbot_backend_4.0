@@ -1,0 +1,52 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Environment files
+.env
+*.env
+
+# VS Code settings
+.vscode/
+
+# Jupyter Notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# Python virtual environments
+venv/
+ENV/
+
+# Test and coverage
+.coverage
+htmlcov/
+*.cover
+*.pyc
+*.pyo
+*.pyd
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Supabase
+backend/db/supabase_client.pyc
+
+# Misc
+*.sqlite3
+*.db
+
+# Ignore all compiled files
+**/*.pyc
+
+# Ignore all cache folders
+**/__pycache__/
